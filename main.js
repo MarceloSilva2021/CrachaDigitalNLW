@@ -14,7 +14,14 @@
           for(let li of socialLinks.children){
             const social = li.getAttribute("class")
 
-            li.children[0].href = `http://${social}.com/${linksSocialMedia[social]}`            
+            if(social === "whatsapp"){
+              li.children[0].href = `http://wa.me/${linksSocialMedia[social]}`              
+            }else if(social === "gmail"){
+              li.children[0].href = `mailto:${linksSocialMedia[social]}`  
+            }else{
+              li.children[0].href = `http://${social}.com/${linksSocialMedia[social]}`            
+            }
+
           }
         }
 
